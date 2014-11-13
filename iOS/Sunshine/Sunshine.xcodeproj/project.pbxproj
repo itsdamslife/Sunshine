@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		40B216E21A136E6B00C27CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B216E11A136E6B00C27CDA /* AppDelegate.swift */; };
 		40B216E51A136E6B00C27CDA /* Sunshine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B216E31A136E6B00C27CDA /* Sunshine.xcdatamodeld */; };
-		40B216E71A136E6B00C27CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B216E61A136E6B00C27CDA /* ViewController.swift */; };
 		40B216EA1A136E6B00C27CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B216E81A136E6B00C27CDA /* Main.storyboard */; };
 		40B216EC1A136E6B00C27CDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B216EB1A136E6B00C27CDA /* Images.xcassets */; };
 		40B216EF1A136E6B00C27CDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B216ED1A136E6B00C27CDA /* LaunchScreen.xib */; };
 		40B216FB1A136E6B00C27CDA /* SunshineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B216FA1A136E6B00C27CDA /* SunshineTests.swift */; };
+		40B217091A13736700C27CDA /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B217081A13736700C27CDA /* ForecastViewController.swift */; };
+		40B2170B1A14863000C27CDA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B2170A1A14863000C27CDA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,14 @@
 		40B216E01A136E6B00C27CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B216E11A136E6B00C27CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B216E41A136E6B00C27CDA /* Sunshine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sunshine.xcdatamodel; sourceTree = "<group>"; };
-		40B216E61A136E6B00C27CDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40B216E91A136E6B00C27CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40B216EB1A136E6B00C27CDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40B216EE1A136E6B00C27CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		40B216F41A136E6B00C27CDA /* SunshineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunshineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B216F91A136E6B00C27CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B216FA1A136E6B00C27CDA /* SunshineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunshineTests.swift; sourceTree = "<group>"; };
+		40B217081A13736700C27CDA /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		40B2170A1A14863000C27CDA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				40B216E11A136E6B00C27CDA /* AppDelegate.swift */,
-				40B216E61A136E6B00C27CDA /* ViewController.swift */,
+				40B217081A13736700C27CDA /* ForecastViewController.swift */,
+				40B2170A1A14863000C27CDA /* DetailViewController.swift */,
 				40B216E81A136E6B00C27CDA /* Main.storyboard */,
 				40B216EB1A136E6B00C27CDA /* Images.xcassets */,
 				40B216ED1A136E6B00C27CDA /* LaunchScreen.xib */,
@@ -215,9 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B216E71A136E6B00C27CDA /* ViewController.swift in Sources */,
+				40B217091A13736700C27CDA /* ForecastViewController.swift in Sources */,
 				40B216E51A136E6B00C27CDA /* Sunshine.xcdatamodeld in Sources */,
 				40B216E21A136E6B00C27CDA /* AppDelegate.swift in Sources */,
+				40B2170B1A14863000C27CDA /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

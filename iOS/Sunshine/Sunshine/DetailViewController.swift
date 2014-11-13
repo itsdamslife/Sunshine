@@ -1,25 +1,28 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  Sunshine
 //
-//  Created by Damodar on 12/11/14.
+//  Created by Damodar on 13/11/14.
 //  Copyright (c) 2014 itsdamslife. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class DetailViewController: UIViewController
+{
+   
+    @IBOutlet weak var forecastText: UILabel!
+    
+    var forecastString :String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        forecastText.text = forecastString
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

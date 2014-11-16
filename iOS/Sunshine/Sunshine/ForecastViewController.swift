@@ -51,23 +51,20 @@ class ForecastViewController: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        println("Cell # \(indexPath.row) tapped!")
-        let str = "Row number \(indexPath.row) from Section \(indexPath.section)"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        println("===========preparing Segue===========")
-        
         if(segue.identifier == "showdetail")
         {
-            println("Segue prepared!")
-            
             var dvc :DetailViewController! = segue.destinationViewController as DetailViewController
             
             if(sender != nil) {
                 let cell = sender as UITableViewCell!
-                dvc.forecastString = cell.textLabel.text
+                var str :String = cell.textLabel.text as String!
+                str += " from "
+                str += cell.detailTextLabel?.text as String!
+                dvc.forecastString = str
             }
         }
     }

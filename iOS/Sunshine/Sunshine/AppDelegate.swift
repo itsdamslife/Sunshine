@@ -17,6 +17,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /* TEST CODE FOR CORE-DATA MODEL */
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context :NSManagedObjectContext = appDelegate.managedObjectContext!
+        
+        var location :Location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: context) as Location
+        
+        location.cityName = "Bengaluru"
+        location.lat = "21.0891"
+        location.long = "27.0981"
+        location.locationSetting = "Testville"
+
+        var weather :Weather = NSEntityDescription.insertNewObjectForEntityForName("Weather", inManagedObjectContext:context) as Weather
+        let date :NSDate! = NSDate()
+        
+        weather.date = date
+        weather.degrees = "21"
+        weather.humidity = "21.345"
+        weather.max = "25"
+        weather.min = "19"
+        weather.pressure = "20"
+        weather.shortDesc = "Windy, cold"
+        weather.weatherId = "w001"
+        weather.windSpeed = "25 kms/hour"
+        
+        var error :NSErrorPointer = nil
+        
+        let success = context.save(error)
+        
+        if (!success)
+        {
+            println("Whoops, couldn't save: \(error.debugDescription)")
+        }
+
+        let fetchRequest :NSFetchRequest! = NSFetchRequest()
+        
+        let entity :NSEntityDescription! = NSEntityDescription.entityForName("Location", inManagedObjectContext:context)
+        
+        fetchRequest.entity = entity
+        
+        var fetchedObjects :NSArray = context.executeFetchRequest(fetchRequest, error: error) as NSArray!
+        
+        for info in fetchedObjects
+        {
+            let name: String = info.valueForKey("cityName") as String!
+            println("Name: \(name)")
+            
+            let details :NSManagedObject = info.valueForKey("details") as NSManagedObject!
+            let locSetting :String = details.valueForKey("locationSetting") as String!
+            println("Zip: \(locSetting)")
+        }
+        /* TEST CODE FOR CORE-DATA MODEL */
+
+        
         return true
     }
 

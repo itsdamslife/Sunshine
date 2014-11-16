@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4025DAC91A18EACD00ED2CFE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4025DAC81A18EACD00ED2CFE /* Location.swift */; };
+		4025DACB1A18EACD00ED2CFE /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4025DACA1A18EACD00ED2CFE /* Weather.swift */; };
 		40B216E21A136E6B00C27CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B216E11A136E6B00C27CDA /* AppDelegate.swift */; };
 		40B216E51A136E6B00C27CDA /* Sunshine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B216E31A136E6B00C27CDA /* Sunshine.xcdatamodeld */; };
 		40B216EA1A136E6B00C27CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B216E81A136E6B00C27CDA /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4025DAC81A18EACD00ED2CFE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4025DACA1A18EACD00ED2CFE /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		40B216DC1A136E6B00C27CDA /* Sunshine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sunshine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B216E01A136E6B00C27CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B216E11A136E6B00C27CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				40B216E11A136E6B00C27CDA /* AppDelegate.swift */,
+				4025DACA1A18EACD00ED2CFE /* Weather.swift */,
+				4025DAC81A18EACD00ED2CFE /* Location.swift */,
 				40B217081A13736700C27CDA /* ForecastViewController.swift */,
 				40B2170A1A14863000C27CDA /* DetailViewController.swift */,
 				40B216E81A136E6B00C27CDA /* Main.storyboard */,
@@ -220,7 +226,9 @@
 			files = (
 				40B217091A13736700C27CDA /* ForecastViewController.swift in Sources */,
 				40B216E51A136E6B00C27CDA /* Sunshine.xcdatamodeld in Sources */,
+				4025DAC91A18EACD00ED2CFE /* Location.swift in Sources */,
 				40B216E21A136E6B00C27CDA /* AppDelegate.swift in Sources */,
+				4025DACB1A18EACD00ED2CFE /* Weather.swift in Sources */,
 				40B2170B1A14863000C27CDA /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +423,7 @@
 				40B217001A136E6B00C27CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40B217011A136E6B00C27CDA /* Build configuration list for PBXNativeTarget "SunshineTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +432,7 @@
 				40B217031A136E6B00C27CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

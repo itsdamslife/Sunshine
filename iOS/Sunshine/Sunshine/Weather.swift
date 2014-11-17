@@ -21,5 +21,6 @@ class Weather: NSManagedObject {
     @NSManaged var weatherId: String
     @NSManaged var windSpeed: String
     @NSManaged var locationId: Location
+    @NSManaged var details: NSManagedObject
 
 }

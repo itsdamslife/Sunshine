@@ -15,5 +15,5 @@ class Location: NSManagedObject {
     @NSManaged var lat: String
     @NSManaged var locationSetting: String
     @NSManaged var long: String
-
+    @NSManaged var details: NSManagedObject
 }

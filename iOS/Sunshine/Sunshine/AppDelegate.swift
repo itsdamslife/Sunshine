@@ -18,13 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        /* TEST CODE FOR CORE-DATA MODEL */
+        var dirs :NSArray! = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as NSArray
+        
+        println(dirs[0])
+        
+        /* TEST CODE FOR CORE-DATA MODEL ---
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context :NSManagedObjectContext = appDelegate.managedObjectContext!
         
         var location :Location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: context) as Location
         
-        location.cityName = "Bengaluru"
+        location.cityName = "Mysuru"
         location.lat = "21.0891"
         location.long = "27.0981"
         location.locationSetting = "Testville"
@@ -59,16 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var fetchedObjects :NSArray = context.executeFetchRequest(fetchRequest, error: error) as NSArray!
         
-        for info in fetchedObjects
+        
+        let count = fetchedObjects.count - 1
+        for i in 0...count
         {
-            let name: String = info.valueForKey("cityName") as String!
-            println("Name: \(name)")
+            var info: Location = fetchedObjects[i] as Location
+            let name: String = info.cityName
+            let locSetting: String = info.locationSetting
             
-            let details :NSManagedObject = info.valueForKey("details") as NSManagedObject!
-            let locSetting :String = details.valueForKey("locationSetting") as String!
+            println("Name: \(name)")
             println("Zip: \(locSetting)")
         }
-        /* TEST CODE FOR CORE-DATA MODEL */
+        --- TEST CODE FOR CORE-DATA MODEL */
 
         
         return true

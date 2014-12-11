@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+
+/* http://api.openweathermap.org/data/2.5/forecast/daily?q=560001&mode=json&units=metric&cnt=7 */
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         var dirs :NSArray! = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as NSArray
-        
         println(dirs[0])
         
         /* TEST CODE FOR CORE-DATA MODEL ---
@@ -105,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
+    // TODO: - Learn this stuff!
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.itsdamslife.Sunshine" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)

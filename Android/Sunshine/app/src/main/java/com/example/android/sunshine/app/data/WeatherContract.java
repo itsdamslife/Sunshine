@@ -19,10 +19,15 @@ public class WeatherContract {
     /* Inner class that defines the table contents of the location table */
     public static final class LocationEntry implements BaseColumns {
 
-        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_LOCATION).build();
+        public static final Uri CONTENT_URI =
+                BASE_CONTENT_URI.buildUpon().appendPath(PATH_LOCATION).build();
 
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/" + CONTENT_AUTHORITY + "/" + PATH_LOCATION;
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/" + CONTENT_AUTHORITY + "/" + PATH_LOCATION;
+        public static final String CONTENT_TYPE =
+                "vnd.android.cursor.dir/" + CONTENT_AUTHORITY + "/" + PATH_LOCATION;
+        public static final String CONTENT_ITEM_TYPE =
+                "vnd.android.cursor.item/" + CONTENT_AUTHORITY + "/" + PATH_LOCATION;
+
+
 
         // Table name
         public static final String TABLE_NAME = "location";
@@ -41,7 +46,8 @@ public class WeatherContract {
         public static final String COLUMN_COORD_LONG = "coord_long";
 
         public static Uri buildLocationUri(long id) {
-            return ContentUris.withAppendedId(CONTENT_URI, id);
+            Uri uri = ContentUris.withAppendedId(CONTENT_URI, id);
+            return uri;
         }
     }
 
@@ -86,24 +92,30 @@ public class WeatherContract {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
-        public static Uri buildWeatherLocationWithStartDate(String locationSetting, String startDate) {
-            return CONTENT_URI.buildUpon().appendPath(locationSetting).appendQueryParameter(COLUMN_DATETEXT, startDate).build();
+        public static Uri buildWeatherLocation(String locationSetting) {
+            return CONTENT_URI.buildUpon().appendPath(locationSetting).build();
+        }
+
+        public static Uri buildWeatherLocationWithStartDate(
+                String locationSetting, String startDate) {
+            return CONTENT_URI.buildUpon().appendPath(locationSetting)
+                    .appendQueryParameter(COLUMN_DATETEXT, startDate).build();
         }
 
         public static Uri buildWeatherLocationWithDate(String locationSetting, String date) {
             return CONTENT_URI.buildUpon().appendPath(locationSetting).appendPath(date).build();
         }
 
-        public static  String getLocationSettingFromUri(Uri uri) {
-            return  uri.getPathSegments().get(1);
+        public static String getLocationSettingFromUri(Uri uri) {
+            return uri.getPathSegments().get(1);
         }
 
-        public static  String getDateFromUri(Uri uri) {
-            return  uri.getPathSegments().get(2);
+        public static String getDateFromUri(Uri uri) {
+            return uri.getPathSegments().get(2);
         }
 
-        public static  String getStartDateFromUri(Uri uri) {
-            return  uri.getQueryParameter(COLUMN_DATETEXT);
+        public static String getStartDateFromUri(Uri uri) {
+            return uri.getQueryParameter(COLUMN_DATETEXT);
         }
     }
 }

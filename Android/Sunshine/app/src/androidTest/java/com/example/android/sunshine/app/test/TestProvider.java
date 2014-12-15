@@ -78,7 +78,7 @@ public class TestProvider extends AndroidTestCase {
     static ContentValues createWeatherValues(long locationRowId) {
         ContentValues weatherValues = new ContentValues();
         weatherValues.put(WeatherEntry.COLUMN_LOC_KEY, locationRowId);
-        weatherValues.put(WeatherEntry.COLUMN_DATETEXT, "20141205");
+        weatherValues.put(WeatherEntry.COLUMN_DATETEXT, "20140612");
         weatherValues.put(WeatherEntry.COLUMN_DEGREES, 1.1);
         weatherValues.put(WeatherEntry.COLUMN_HUMIDITY, 1.2);
         weatherValues.put(WeatherEntry.COLUMN_PRESSURE, 1.3);
@@ -115,5 +115,26 @@ public class TestProvider extends AndroidTestCase {
             assertEquals(expectedValue, valueCursor.getString(idx));
         }
         valueCursor.close();
+    }
+
+    public void testGetType () {
+        String type = mContext.getContentResolver().getType(WeatherEntry.CONTENT_URI);
+
+        assertEquals(WeatherEntry.CONTENT_TYPE, type);
+
+        String testLocation = "99705";
+        type = mContext.getContentResolver().getType(WeatherEntry.buildWeatherLocation(testLocation));
+        assertEquals(WeatherEntry.CONTENT_TYPE, type);
+
+        String testDate = "20140612";
+        type = mContext.getContentResolver().getType(WeatherEntry.buildWeatherLocationWithDate(testLocation, testDate));
+        assertEquals(WeatherEntry.CONTENT_ITEM_TYPE, type);
+
+        type = mContext.getContentResolver().getType(LocationEntry.buildLocationUri(1L));
+        assertEquals(LocationEntry.CONTENT_ITEM_TYPE, type);
+
+        type = mContext.getContentResolver().getType(LocationEntry.CONTENT_URI);
+        assertEquals(LocationEntry.CONTENT_TYPE, type);
+
     }
 }

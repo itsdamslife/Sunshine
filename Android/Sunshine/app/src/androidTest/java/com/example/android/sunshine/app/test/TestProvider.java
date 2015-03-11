@@ -148,6 +148,15 @@ public class TestProvider extends AndroidTestCase {
         assertEquals(LocationEntry.CONTENT_ITEM_TYPE, type);
     }
 
+    // The target api annotation is needed for the call to keySet -- we wouldn't want
+    // to use this in our app, but in a test it's fine to assume a higher target.
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    void addAllContentValues(ContentValues destination, ContentValues source) {
+        for (String key : source.keySet()) {
+            destination.put(key, source.getAsString(key));
+        }
+    }
+
 //    public void testUpdateLocation() {
 //        // Create a new map of values, where column names are the keys
 //        ContentValues values = com.example.android.sunshine.app.test.TestDb.createNorthPoleLocationValues();
@@ -181,15 +190,6 @@ public class TestProvider extends AndroidTestCase {
 //
 //        com.example.android.sunshine.app.test.TestDb.validateCursor(cursor, updatedValues);
 //    }
-
-    // The target api annotation is needed for the call to keySet -- we wouldn't want
-    // to use this in our app, but in a test it's fine to assume a higher target.
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    void addAllContentValues(ContentValues destination, ContentValues source) {
-        for (String key : source.keySet()) {
-            destination.put(key, source.getAsString(key));
-        }
-    }
 //
 //    static final String KALAMAZOO_LOCATION_SETTING = "kalamazoo";
 //    static final String KALAMAZOO_WEATHER_START_DATE = "20140625";

@@ -56,7 +56,13 @@ public class WeatherProvider extends ContentProvider {
             }
 //            weather/*
             case WEATHER_WITH_LOCATION: {
-                retCursor = null;
+                retCursor = mOpenHelper.getReadableDatabase().query(WeatherContract.WeatherEntry.TABLE_NAME,
+                        projection,
+                        WeatherContract.LocationEntry._ID +  " = '" + ContentUris.parseId(uri) + "'",
+                        null,
+                        null,
+                        null,
+                        sortOrder);
                 break;
             }
 //            weather

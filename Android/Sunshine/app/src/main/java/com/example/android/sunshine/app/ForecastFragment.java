@@ -260,12 +260,14 @@ public class ForecastFragment extends Fragment {
                 final String FORMAT_PARAM = "mode";
                 final String UNITS_PARAM = "units";
                 final String DAYS_PARAM = "cnt";
+                final String API_KEY = "APPID";
 
                 Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-                        .appendQueryParameter(QUERY_PARAM,params[0])
+                        .appendQueryParameter(QUERY_PARAM, params[0])
                         .appendQueryParameter(FORMAT_PARAM, format)
                         .appendQueryParameter(UNITS_PARAM, units)
                         .appendQueryParameter(DAYS_PARAM, params[1])
+                        .appendQueryParameter(API_KEY, "42378909324776a3a18ed38acd1aac56")
                         .build();
 
                 Log.v(LOG_TAG, "Built URI: " + builtUri.toString());
